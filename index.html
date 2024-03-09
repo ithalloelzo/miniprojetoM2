@@ -1,11 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miniprojeto</title>
+    <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
-    <h1>ggg</h1>
+    <h1>Cadastro de Alunos</h1>
+
+    <div>
+        <label for="name">Nome</label>
+        <input id="name" type="text">
+    </div>
+
+    <div>
+        <label for="age">Idade</label>
+        <input id="age" type="number">
+    </div>
+
+    <div>
+        <label for="gender">Gênero</label>
+        <select id="gender" name="gender">
+            <option value="masculine">Masculino</option>
+            <option value="feminine">Feminino</option>
+            <option value="undefined" selected>Prefiro não declarar</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="class">Turma</label>
+        <input id="class" type="text">
+    </div>
+
+    <div>
+        <label for="contact">Contato</label>
+        <input id="contact" type="number">
+    </div>
+
+    <div>
+        <label for="adress">Endereço</label>
+        <input id="adress" type="text">
+    </div>
+    <button>Cadastrar Aluno</button>
+
+    <script src="index.js"></script>
 </body>
+
 </html>
