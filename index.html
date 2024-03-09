@@ -6,45 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miniprojeto</title>
     <link rel="stylesheet" href="index.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <h1>Cadastro de Alunos</h1>
 
-    <div>
-        <label for="name">Nome</label>
-        <input id="name" type="text">
+    <div id="campus">
+        <h1>Cadastro de Alunos</h1>
+
+        <div>
+            <label for="name">Nome</label>
+            <input id="name" type="text">
+        </div>
+        <div>
+            <label for="age">Idade</label>
+            <input id="age" type="number">
+        </div>
+        <div>
+            <label for="gender">Gênero</label>
+            <select id="gender" name="gender">
+                <option value="masculine">Masculino</option>
+                <option value="feminine">Feminino</option>
+                <option value="undefined" selected>Prefiro não declarar</option>
+            </select>
+        </div>
+        <div>
+            <label for="class">Turma</label>
+            <input id="class" type="text">
+        </div>
+        <div>
+            <label for="contact">Contato</label>
+            <input id="contact" type="number">
+        </div>
+        <div>
+            <label for="adress">Endereço</label>
+            <input id="adress" type="text">
+        </div>
+        <button id="register">Cadastrar Aluno</button>
     </div>
 
-    <div>
-        <label for="age">Idade</label>
-        <input id="age" type="number">
-    </div>
-
-    <div>
-        <label for="gender">Gênero</label>
-        <select id="gender" name="gender">
-            <option value="masculine">Masculino</option>
-            <option value="feminine">Feminino</option>
-            <option value="undefined" selected>Prefiro não declarar</option>
-        </select>
-    </div>
-
-    <div>
-        <label for="class">Turma</label>
-        <input id="class" type="text">
-    </div>
-
-    <div>
-        <label for="contact">Contato</label>
-        <input id="contact" type="number">
-    </div>
-
-    <div>
-        <label for="adress">Endereço</label>
-        <input id="adress" type="text">
-    </div>
-    <button>Cadastrar Aluno</button>
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Gênero</th>
+                    <th>Turma</th>
+                    <th>Contato</th>
+                    <th>Endereço</th>
+                </tr>
+            </thead>
+            <tbody id="tab">
+                
+            </tbody>
+        </table>
+    </section>
 
     <script src="index.js"></script>
 </body>
