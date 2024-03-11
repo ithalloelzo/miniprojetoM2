@@ -5,31 +5,42 @@
     box-sizing: border-box;
 }
 
-#campus{
+#campus, #editDisplay{
     justify-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
-#campus h1{
+#campus h1, #editDisplay h1{
     font-size: 60px;
     padding: 10px;
     margin-bottom: 50px;
 }
 
-#campus div {
+#campus div, #editDisplay div {
     align-items: center;
     display: flex;
     flex-direction: column;
     width: 20%;
 }
-#campus div input, #gender{
+#campus div input,#editDisplay div input, #gender, #genderEdit{
     width: 100%;
     padding: 8px 23px 8px 8px;
     border-radius: 10px;
     background-color: #f1f4ff;
     border: 1px solid #1f41bb;   
+}
+#editDisplay {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    backdrop-filter: blur(30px);
 }
 
 input[type=number]::-webkit-inner-spin-button { 
@@ -76,4 +87,16 @@ section{
     justify-content: center;
     margin-top: 60px;
     margin-bottom: 50px;
+}
+/* //EU */
+button {
+    border: none;
+    padding: 4px;
+    background-color: rgb(150, 167, 189);
+    border-radius: 10px;
+}
+#close{
+    position: absolute;
+    top: 15%;
+    right: 15%;
 }

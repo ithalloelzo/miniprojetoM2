@@ -14,7 +14,7 @@
 <body>
 
     <div id="campus">
-        <h1>Cadastro de Alunos</h1>
+        <h1>Cadastro de Alunos - PDA</h1>
 
         <div>
             <label for="name">Nome</label>
@@ -27,9 +27,9 @@
         <div>
             <label for="gender">Gênero</label>
             <select id="gender" name="gender">
-                <option value="masculine">Masculino</option>
-                <option value="feminine">Feminino</option>
-                <option value="undefined" selected>Prefiro não declarar</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Indefinido" selected>Prefiro não declarar</option>
             </select>
         </div>
         <div>
@@ -44,7 +44,7 @@
             <label for="adress">Endereço</label>
             <input id="adress" type="text">
         </div>
-        <button id="register">Cadastrar Aluno</button>
+        <button onclick="addUser()" id="register">Cadastrar Aluno</button>
     </div>
 
     <section>
@@ -57,6 +57,7 @@
                     <th>Turma</th>
                     <th>Contato</th>
                     <th>Endereço</th>
+                    <th>Ação</th>
                 </tr>
             </thead>
             <tbody id="tab">
@@ -64,6 +65,42 @@
             </tbody>
         </table>
     </section>
+
+    <div style="display: none;" id="editDisplay">
+        <img id="close" onclick="closeShow()" src="close-circle.svg" alt="">
+        <h1>Edição de Alunos</h1>
+
+        <div>
+            <label for="nameEdit">Nome</label>
+            <input id="nameEdit" type="text">
+        </div>
+        <div>
+            <label for="ageEdit">Idade</label>
+            <input id="ageEdit" type="number">
+        </div>
+        <div>
+            <label for="genderEdit">Gênero</label>
+            <select id="genderEdit" name="gender">
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Prefiro não declarar" >Prefiro não declarar</option>
+            </select>
+        </div>
+        <div>
+            <label for="classEdit">Turma</label>
+            <input id="classEdit" type="text">
+        </div>
+        <div>
+            <label for="contactEdit">Contato</label>
+            <input id="contactEdit" type="number">
+        </div>
+        <div>
+            <label for="adressEdit">Endereço</label>
+            <input id="adressEdit" type="text">
+        </div>
+        <button onclick="updateUser()" id="register" class="buttonEdit">Editar Aluno</button>
+    </div>
+
 
     <script src="index.js"></script>
 </body>
