@@ -25,14 +25,22 @@ function addUser() {
     const contact = document.getElementById("contact").value
     const age = document.getElementById("age").value
     const classtag = document.getElementById("class").value
+    if ((nametag.length || adress.length || gender.length || contact.length || age.length || classtag.length) < 3) {
+        alert("Preencha com no mínimo 3 caracteres")
 
-    const id = generateID()
+    }
+    else if (contact) {
+        alert("Preencha o email corretamente")
 
-    const newUser = new CreateUser(id, nametag, age, gender, classtag, contact, adress)
+    }
+    else {
+        const id = generateID()
 
-    arrayUser.push(newUser)
+        const newUser = new CreateUser(id, nametag, age, gender, classtag, contact, adress)
 
-    tab.innerHTML += `
+        arrayUser.push(newUser)
+
+        tab.innerHTML += `
     <tr id="${newUser.id}">  
     <th>${newUser.name}</th>
     <th>${newUser.age}</th>
@@ -45,6 +53,8 @@ function addUser() {
      <button onclick="editUser('${newUser.id}')">Editar</button>
     </th>
     </tr> `
+    }
+
 }
 
 function deleteUser(id) {
@@ -54,7 +64,7 @@ function deleteUser(id) {
     arrayUser.splice(indexId, 1)
 }
 
-function closeShow(){
+function closeShow() {
     const editDisplay = document.getElementById('editDisplay')
     let setDisplay = editDisplay.style.display == 'none' ? 'flex' : 'none'
     editDisplay.style.display = setDisplay
@@ -63,7 +73,7 @@ function closeShow(){
 
 function editUser(id) {
     let buttonEdit = document.getElementsByClassName("buttonEdit")[0]
-    buttonEdit.setAttribute("onclick", `updateUser(${id})`)
+    buttonEdit.setAttribute("onclick", `updateUser('${id}')`)
     closeShow()
     let indexId = arrayUser.findIndex(user => user.id === id);
 
@@ -76,20 +86,28 @@ function editUser(id) {
     document.getElementById("adressEdit").value = arrayUser[indexId].adress
 }
 
-function updadeUser(id){
+function updateUser(id) {
     const nametag = document.getElementById("nameEdit").value
     const age = document.getElementById("ageEdit").value
     const gender = document.getElementById("genderEdit").value
     const classtag = document.getElementById("classEdit").value
     const contact = document.getElementById("contactEdit").value
     const adress = document.getElementById("adressEdit").value
-    
+
     const editUser = new CreateUser(id, nametag, age, gender, classtag, contact, adress)
-    
+
     let indexId = arrayUser.findIndex(user => user.id === id);
 
     arrayUser[indexId] = editUser
-
+    let userTab = document.getElementById(id)
+    let userTabTh = userTab.getElementsByTagName("th")
+    userTabTh[0].innerText = editUser.name
+    userTabTh[1].innerText = editUser.age
+    userTabTh[2].innerText = editUser.gender
+    userTabTh[3].innerText = editUser.class
+    userTabTh[4].innerText = editUser.contact
+    userTabTh[5].innerText = editUser.adress
+    closeShow()
 }
 
 
